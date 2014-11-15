@@ -1,4 +1,5 @@
-GET     /phones/v1/:phoneId             controllers.PhoneController.index(phoneId)
+GET     /phones/v1/:phone               @controllers.PhoneController.phoneInfo(phone)
+GET     /phones/v1/images/:image        @controllers.PhoneController.phoneImage(image)
 
 GET     /                               controllers.Assets.at(path="/public/app", file="index.html")
 GET     /*file                          controllers.Assets.at(path="/public/app", file)

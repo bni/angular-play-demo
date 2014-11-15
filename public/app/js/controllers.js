@@ -1,14 +1,14 @@
 'use strict';
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var phoneControllers = angular.module('phoneControllers', []);
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
+phoneControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
     function ($scope, Phone) {
         $scope.phones = Phone.query();
         $scope.orderProp = 'age';
     }]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
+phoneControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
     function ($scope, $routeParams, Phone) {
         $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function (phone) {
             $scope.mainImageUrl = phone.images[0];

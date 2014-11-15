@@ -1,8 +1,8 @@
 'use strict';
 
-var phonecatServices = angular.module('phonecatServices', ['ngResource']);
+var phoneServices = angular.module('phoneServices', ['ngResource']);
 
-phonecatServices.factory('Phone', ['$resource',
+phoneServices.factory('Phone', ['$resource',
     function ($resource) {
         return $resource('phones/v1/:phoneId', {}, {
             query: {method: 'GET', params: {phoneId: 'phones'}, isArray: true}
