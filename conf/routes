@@ -1,4 +1,4 @@
-GET     /demo/v1/test           controllers.TestController.index()
+GET     /phones/v1/:phoneId             controllers.PhoneController.index(phoneId)
 
-GET     /                       controllers.Assets.at(path="/public/app", file="index.html")
-GET     /*file                  controllers.Assets.at(path="/public/app", file)
+GET     /                               controllers.Assets.at(path="/public/app", file="index.html")
+GET     /*file                          controllers.Assets.at(path="/public/app", file)
