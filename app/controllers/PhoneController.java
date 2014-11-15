@@ -10,16 +10,16 @@ public class PhoneController extends Controller {
     public Result phoneInfo(String phone) {
         response().setContentType("application/json");
 
-        InputStream is = Play.application().classloader().getResourceAsStream("phones/" + phone + ".json");
-
-        return ok(is);
+        return ok(getResourceStream("phones/" + phone + ".json"));
     }
 
     public Result phoneImage(String image) {
         response().setContentType("image/jpeg");
 
-        InputStream is = Play.application().classloader().getResourceAsStream("phones/images/" + image);
+        return ok(getResourceStream("phones/images/" + image));
+    }
 
-        return ok(is);
+    private InputStream getResourceStream(String path) {
+        return Play.application().classloader().getResourceAsStream(path);
     }
 }
