@@ -11,11 +11,11 @@ phoneApp.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
             when('/phones', {
-                templateUrl: 'phone-list.html',
+                templateUrl: 'views/phone-list.html',
                 controller: 'PhoneListCtrl'
             }).
             when('/phones/:phoneId', {
-                templateUrl: 'phone-detail.html',
+                templateUrl: 'views/phone-detail.html',
                 controller: 'PhoneDetailCtrl'
             }).
             otherwise({
