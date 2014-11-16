@@ -1,11 +1,11 @@
 .DS_Store
 /.idea
 
-.settings
-logs
-project/project
-project/target
-target
+/.settings
+/logs
+/project/project
+/project/target
+/target
 
-node_modules
-bower_components
+/public/node_modules
+/public/app/bower_components
