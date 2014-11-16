@@ -1,12 +1,6 @@
 'use strict';
 
-var phoneControllers = angular.module('phoneControllers', []);
-
-phoneControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-    function ($scope, Phone) {
-        $scope.phones = Phone.query();
-        $scope.orderProp = 'age';
-    }]);
+//var phoneControllers = angular.module('phoneControllers', []);
 
 phoneControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
     function ($scope, $routeParams, Phone) {
