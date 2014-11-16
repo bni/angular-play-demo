@@ -1,7 +1,5 @@
 'use strict';
 
-//var phoneControllers = angular.module('phoneControllers', []);
-
 phoneControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
     function ($scope, $routeParams, Phone) {
         $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function (phone) {
