@@ -7,18 +7,17 @@ var phoneApp = angular.module('phoneApp', [
     'phoneServices'
 ]);
 
-phoneApp.config(['$routeProvider',
-    function ($routeProvider) {
-        $routeProvider.
-            when('/phones', {
-                templateUrl: 'phone-list/phone-list.html',
-                controller: 'PhoneListCtrl'
-            }).
-            when('/phones/:phoneId', {
-                templateUrl: 'phone-detail/phone-detail.html',
-                controller: 'PhoneDetailCtrl'
-            }).
-            otherwise({
-                redirectTo: '/phones'
-            });
-    }]);
+phoneApp.config(function ($routeProvider) {
+    $routeProvider
+    .when('/phones', {
+        templateUrl: 'phone-list/phone-list.html',
+        controller: 'PhoneListCtrl'
+    })
+    .when('/phones/:phoneId', {
+        templateUrl: 'phone-detail/phone-detail.html',
+        controller: 'PhoneDetailCtrl'
+    })
+    .otherwise({
+        redirectTo: '/phones'
+    });
+});
