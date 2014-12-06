@@ -1,9 +1,9 @@
 {
     "name": "angular-play-demo",
-    "description": "AngularJS Play Framework Demo",
+    "description": "Angular Play Demo",
     "version": "0.0.1",
     "dependencies": {
-        "bootstrap": "3.3.x",
+        "bootswatch": "3.3.x",
         "angular": "1.3.x",
         "angular-route": "1.3.x",
         "angular-resource": "1.3.x"

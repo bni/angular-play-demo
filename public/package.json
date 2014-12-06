@@ -1,6 +1,6 @@
 {
     "name": "angular-play-demo",
-    "description": "AngularJS Play Framework Demo",
+    "description": "Angular Play Demo",
     "repository": "https://github.com/bni/angular-play-demo",
     "version": "0.0.1",
     "devDependencies": {

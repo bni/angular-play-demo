@@ -1,5 +1,5 @@
 body {
-    padding-top: 20px;
+    padding-top: 80px;
 }
 
 .phones {
@@ -22,10 +22,8 @@ body {
 
 img.phone {
     float: left;
-    border: 1px solid black;
     margin-right: 3em;
     margin-bottom: 2em;
-    background-color: white;
     padding: 2em;
     height: 400px;
     width: 400px;
@@ -37,10 +35,8 @@ ul.phone-thumbs {
 }
 
 ul.phone-thumbs li {
-    border: 1px solid black;
     display: inline-block;
     margin: 1em;
-    background-color: white;
 }
 
 ul.phone-thumbs img {
@@ -73,8 +69,4 @@ ul.specs > li > span {
 
 ul.specs dt {
     font-weight: bold;
-}
-
-h1 {
-    border-bottom: 1px solid gray;
 }
