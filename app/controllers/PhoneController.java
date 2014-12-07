@@ -1,25 +1,24 @@
 package controllers;
 
-import play.Play;
 import play.mvc.Controller;
 import play.mvc.Result;
+import services.ResourceService;
 
-import java.io.InputStream;
+import javax.inject.Inject;
 
 public class PhoneController extends Controller {
+    @Inject
+    private ResourceService resourceService;
+
     public Result phoneInfo(String phone) {
         response().setContentType("application/json");
 
-        return ok(getResourceStream("phones/" + phone + ".json"));
+        return ok(resourceService.getResourceStream("phones/" + phone + ".json"));
     }
 
     public Result phoneImage(String image) {
         response().setContentType("image/jpeg");
 
-        return ok(getResourceStream("phones/images/" + image));
-    }
-
-    private InputStream getResourceStream(String path) {
-        return Play.application().classloader().getResourceAsStream(path);
+        return ok(resourceService.getResourceStream("phones/images/" + image));
     }
 }

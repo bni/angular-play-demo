@@ -7,6 +7,7 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 scalaVersion := "2.11.1"
 
 libraryDependencies ++= Seq(
-  javaJdbc,
-  javaJpa
+  javaCore,
+  javaJpa,
+  "com.google.inject" % "guice" % "4.0-beta"
 )
