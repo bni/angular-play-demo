@@ -20,7 +20,7 @@ public class Global extends GlobalSettings {
     }
 
     @Override
-    public <T> T getControllerInstance(Class<T> aClass) throws Exception {
-        return injector.getInstance(aClass);
+    public <T> T getControllerInstance(Class<T> clazz) throws Exception {
+        return injector.getInstance(clazz);
     }
 }
