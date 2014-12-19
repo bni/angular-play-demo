@@ -4,9 +4,10 @@
     "repository": "https://github.com/bni/angular-play-demo",
     "version": "0.0.1",
     "devDependencies": {
-        "bower": "latest"
+        "bower": "latest",
+        "bower-installer": "latest"
     },
     "scripts": {
-        "postinstall": "bower install"
+        "postinstall": "bower install && bower-installer"
     }
 }

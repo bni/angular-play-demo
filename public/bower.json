@@ -7,5 +7,20 @@
         "angular": "1.3.x",
         "angular-route": "1.3.x",
         "angular-resource": "1.3.x"
+    },
+    "install": {
+        "path": "app/lib",
+        "sources": {
+            "angular": "bower_components/angular/angular.min.js",
+            "angular-resource": "bower_components/angular-resource/angular-resource.min.js",
+            "angular-route": "bower_components/angular-route/angular-route.min.js",
+            "bootstrap": [
+                "bower_components/bootstrap/dist/js/bootstrap.min.js",
+                "bower_components/bootstrap/dist/fonts/*"
+            ],
+            "bootswatch": "bower_components/bootswatch/cerulean/bootstrap.min.css",
+            "jquery": "bower_components/jquery/dist/jquery.min.js"
+        },
+        "ignore": ["bootstrap-sass-official"]
     }
 }
