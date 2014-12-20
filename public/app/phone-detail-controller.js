@@ -1,11 +1,7 @@
 'use strict';
 
-phoneControllers.controller('PhoneDetailCtrl', function ($scope, $routeParams, Phone) {
+phoneControllers.controller('PhoneDetailCtrl', function ($scope, $routeParams, Phone, breadcrumbs) {
     $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function (phone) {
-        $scope.mainImageUrl = phone.images[0];
+        breadcrumbs.options = {'Details': phone.name};
     });
-
-    $scope.setImage = function (imageUrl) {
-        $scope.mainImageUrl = imageUrl;
-    }
 });

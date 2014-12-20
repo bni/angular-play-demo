@@ -8,7 +8,8 @@
         "angular-route": "1.2.x",
         "angular-resource": "1.2.x",
         "angular-bootstrap": "0.12.x",
-        "angular-tablesort": "1.0.x"
+        "angular-tablesort": "1.0.x",
+        "ng-breadcrumbs": "0.4.x"
     },
     "install": {
         "path": "app/lib",
@@ -28,6 +29,9 @@
             "angular-tablesort": [
                 "bower_components/angular-tablesort/js/angular-tablesort.js",
                 "bower_components/angular-tablesort/tablesort.css"
+            ],
+            "ng-breadcrumbs": [
+                "bower_components/ng-breadcrumbs/dist/ng-breadcrumbs.min.js"
             ]
         },
         "ignore": ["bootstrap-sass-official"]

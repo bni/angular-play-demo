@@ -5,18 +5,21 @@ var phoneApp = angular.module('phoneApp', [
     'phoneControllers',
     'phoneServices',
     'ui.bootstrap',
-    'tableSort'
+    'tableSort',
+    'ng-breadcrumbs'
 ]);
 
 phoneApp.config(function ($routeProvider) {
     $routeProvider
     .when('/phones', {
         templateUrl: 'phone-list.html',
-        controller: 'PhoneListCtrl'
+        controller: 'PhoneListCtrl',
+        label: 'Home'
     })
     .when('/phones/:phoneId', {
         templateUrl: 'phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+        controller: 'PhoneDetailCtrl',
+        label: 'Details'
     })
     .otherwise({
         redirectTo: '/phones'
