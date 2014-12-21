@@ -18,11 +18,27 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-10 col-md-offset-2">
-                            <button type="submit" class="btn btn-default btn-primary">Save</button>
+                            <button type="submit" class="btn btn-default btn-primary">
+                                <i class="glyphicon glyphicon-ok"></i>
+                                Save
+                            </button>
                         </div>
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
+
+    <div class="col-md-3">
+        <div ng-controller="CarouselCtrl">
+            <div style="width: 400px; height: 400px">
+                <carousel interval="5000">
+                    <slide ng-repeat="slide in slides" active="slide.active">
+                        <img ng-src="{{slide.image}}" style="margin:auto;">
+                    </slide>
+                </carousel>
+            </div>
+        </div>
+    </div>
+
 </div>
