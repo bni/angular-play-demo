@@ -19,15 +19,14 @@
             "angular-route": "bower_components/angular-route/angular-route.min.js",
             "bootstrap": {
                 "mapping": [
-                    {"bower_components/bootstrap/dist/js/bootstrap.min.js": "bootstrap.min.js"},
-                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot": "../fonts/glyphicons-halflings-regular.eot"},
-                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg": "../fonts/glyphicons-halflings-regular.svg"},
-                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf": "../fonts/glyphicons-halflings-regular.ttf"},
-                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff": "../fonts/glyphicons-halflings-regular.woff"}
+                    {"bower_components/bootstrap/dist/js/bootstrap.min.js": "js/bootstrap.min.js"},
+                    {"bower_components/bootswatch/cerulean/bootstrap.min.css": "../bootstrap/css/bootstrap.min.css"},
+                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot": "fonts/glyphicons-halflings-regular.eot"},
+                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg": "fonts/glyphicons-halflings-regular.svg"},
+                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf": "fonts/glyphicons-halflings-regular.ttf"},
+                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff": "fonts/glyphicons-halflings-regular.woff"}
                 ]
             },
-            "bootswatch": "bower_components/bootswatch/cerulean/bootstrap.min.css",
-            "jquery": "bower_components/jquery/dist/jquery.min.js",
             "angular-bootstrap": [
                 "bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"
             ],
@@ -39,6 +38,6 @@
                 "bower_components/ng-breadcrumbs/dist/ng-breadcrumbs.min.js"
             ]
         },
-        "ignore": ["bootstrap-sass-official"]
+        "ignore": ["jquery", "bootswatch", "bootstrap-sass-official"]
     }
 }

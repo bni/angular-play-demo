@@ -3,9 +3,7 @@ phoneControllers.controller('CarouselCtrl', function ($scope, $routeParams, Phon
         var slides = $scope.slides = [];
 
         for (var i = 0; i < phone.images.length; i++) {
-            slides.push({
-                image: phone.images[i]
-            });
+            slides.push({image: phone.images[i]});
         }
     });
 });
