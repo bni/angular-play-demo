@@ -41,9 +41,9 @@
     }, 
     "id": "sanyo-zio", 
     "images": [
-        "phones/v1/images/sanyo-zio.0.jpg",
-        "phones/v1/images/sanyo-zio.1.jpg",
-        "phones/v1/images/sanyo-zio.2.jpg"
+        "phones/images/sanyo-zio.0.jpg",
+        "phones/images/sanyo-zio.1.jpg",
+        "phones/images/sanyo-zio.2.jpg"
     ], 
     "name": "SANYO ZIO", 
     "sizeAndWeight": {

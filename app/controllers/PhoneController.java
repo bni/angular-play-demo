@@ -10,15 +10,21 @@ public class PhoneController extends Controller {
     @Inject
     private ResourceService resourceService;
 
-    public Result phoneInfo(String phone) {
+    public Result list() {
         response().setContentType("application/json");
 
-        return ok(resourceService.getResourceStream("phones/" + phone + ".json"));
+        return ok(resourceService.getResourceStream("phones/phones.json"));
     }
 
-    public Result phoneImage(String image) {
+    public Result fetchDetail(String phoneId) {
+        response().setContentType("application/json");
+
+        return ok(resourceService.getResourceStream("phones/" + phoneId + ".json"));
+    }
+
+    public Result getImage(String fileName) {
         response().setContentType("image/jpeg");
 
-        return ok(resourceService.getResourceStream("phones/images/" + image));
+        return ok(resourceService.getResourceStream("phones/images/" + fileName));
     }
 }

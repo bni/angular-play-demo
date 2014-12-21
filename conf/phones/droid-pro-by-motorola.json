@@ -42,8 +42,8 @@
     }, 
     "id": "droid-pro-by-motorola", 
     "images": [
-        "phones/v1/images/droid-pro-by-motorola.0.jpg",
-        "phones/v1/images/droid-pro-by-motorola.1.jpg"
+        "phones/images/droid-pro-by-motorola.0.jpg",
+        "phones/images/droid-pro-by-motorola.1.jpg"
     ], 
     "name": "DROID\u2122 Pro by Motorola", 
     "sizeAndWeight": {
