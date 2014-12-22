@@ -17,8 +17,11 @@
             "angular": {
                 "mapping": [
                     {"bower_components/angular/angular.min.js": "js/angular.min.js"},
+                    {"bower_components/angular/angular.min.js.map": "js/angular.min.js.map"},
                     {"bower_components/angular-route/angular-route.min.js": "js/angular-route.min.js"},
+                    {"bower_components/angular-route/angular-route.min.js.map": "js/angular-route.min.js.map"},
                     {"bower_components/angular-resource/angular-resource.min.js": "js/angular-resource.min.js"},
+                    {"bower_components/angular-resource/angular-resource.min.js.map": "js/angular-resource.min.js.map"},
                     {"bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js": "js/ui-bootstrap-tpls.min.js"},
                     {"bower_components/angular-tablesort/js/angular-tablesort.js": "js/angular-tablesort.js"},
                     {"bower_components/angular-tablesort/tablesort.css": "css/tablesort.css"},

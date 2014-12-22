@@ -22,6 +22,10 @@ public class PhoneController extends Controller {
     public Result fetchDetail(String phoneId) {
         response().setContentType("application/json");
 
+        if ("lg-axis".equals(phoneId)) {
+            return unauthorized();
+        }
+
         return ok(resourceService.getResourceStream("phones/" + phoneId + ".json"));
     }
 

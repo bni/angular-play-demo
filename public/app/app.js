@@ -9,7 +9,7 @@ var phoneApp = angular.module('phoneApp', [
     'ng-breadcrumbs'
 ]);
 
-phoneApp.config(function ($routeProvider) {
+phoneApp.config(function ($routeProvider, $httpProvider) {
     $routeProvider
     .when('/phones', {
         templateUrl: 'phone-list.html',
@@ -23,6 +23,18 @@ phoneApp.config(function ($routeProvider) {
     })
     .otherwise({
         redirectTo: '/phones'
+    });
+
+    $httpProvider.interceptors.push(function ($q) {
+        return {
+            'responseError': function (rejection) {
+                if (rejection.status === 401) {
+                    window.location.href = 'http://www.google.se';
+                }
+
+                return $q.reject(rejection);
+            }
+        };
     });
 });
 
