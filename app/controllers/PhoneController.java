@@ -1,5 +1,8 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import play.Logger;
+import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import services.ResourceService;
@@ -26,5 +29,19 @@ public class PhoneController extends Controller {
         response().setContentType("image/jpeg");
 
         return ok(resourceService.getResourceStream("phones/images/" + fileName));
+    }
+
+    @BodyParser.Of(BodyParser.Json.class)
+    public Result save() {
+        JsonNode json = request().body().asJson();
+
+        String phoneId = json.findPath("id").textValue();
+        String name = json.findPath("name").textValue();
+
+        Logger.info("Setting name: " + name + ", for phoneId: " + phoneId);
+
+        response().setContentType("application/json");
+
+        return ok(resourceService.getResourceStream("phones/" + phoneId + ".json"));
     }
 }

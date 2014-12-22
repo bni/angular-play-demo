@@ -1,6 +1,7 @@
 GET     /phones                         @controllers.PhoneController.list()
 GET     /phones/:phoneId                @controllers.PhoneController.fetchDetail(phoneId)
 GET     /phones/images/:fileName        @controllers.PhoneController.getImage(fileName)
+POST    /phones                         @controllers.PhoneController.save()
 
 GET     /                               controllers.Assets.at(path="/public/app", file="index.html")
 GET     /*file                          controllers.Assets.at(path="/public/app", file)
