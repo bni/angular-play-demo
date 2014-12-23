@@ -1,3 +1,7 @@
 body {
     padding-top: 18px;
 }
+
+.table-hover tbody tr:hover > td {
+    cursor: pointer
+}

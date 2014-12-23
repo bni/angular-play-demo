@@ -13,7 +13,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="phone in phones | filter:query" ts-repeat>
+            <tr ng-repeat="phone in phones | filter:query" ts-repeat ng-click="setSelected(phone.id)"
+                ng-class="{info: phone.id === idSelected}">
                 <td><a href="#/phones/{{phone.id}}">{{phone.name}}</a></td>
                 <td>{{phone.snippet}}</td>
             </tr>
