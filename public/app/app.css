@@ -5,3 +5,7 @@ body {
 .table-hover tbody tr:hover > td {
     cursor: pointer
 }
+
+input[type='checkbox'] {
+    cursor: pointer;
+}

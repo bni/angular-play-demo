@@ -33,6 +33,7 @@
         <table class="table table-striped table-hover" ts-wrapper>
             <thead>
             <tr>
+                <th>&nbsp;</th>
                 <th ts-criteria="name" ts-default="ascending">Name</th>
                 <th ts-criteria="snippet">Snippet</th>
             </tr>
@@ -40,8 +41,16 @@
             <tbody>
             <tr ng-repeat="phone in phones | filter:query" ts-repeat ng-click="setSelected(phone.id)"
                 ng-class="{info: phone.id === idSelected}">
-                <td><a href="#/phones/{{phone.id}}">{{phone.name}}</a></td>
-                <td>{{phone.snippet}}</td>
+                <td>
+                    <input type="checkbox" ng-checked="phone.id === idSelected"
+                           onclick="if (!this.checked) {event.preventDefault(); return false;}">
+                </td>
+                <td>
+                    <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+                </td>
+                <td>
+                    {{phone.snippet}}
+                </td>
             </tr>
             </tbody>
         </table>
