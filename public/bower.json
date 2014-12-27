@@ -9,7 +9,8 @@
         "angular-bootstrap": "0.12.0",
         "angular-tablesort": "1.0.5",
         "ng-breadcrumbs": "0.4.1",
-        "bootswatch": "3.3.1+2"
+        "bootswatch": "3.3.1+2",
+        "angular-fontawesome": "0.3.0"
     },
     "install": {
         "path": "app/lib",
@@ -25,7 +26,8 @@
                     {"bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js": "js/ui-bootstrap-tpls.min.js"},
                     {"bower_components/angular-tablesort/js/angular-tablesort.js": "js/angular-tablesort.js"},
                     {"bower_components/angular-tablesort/tablesort.css": "css/tablesort.css"},
-                    {"bower_components/ng-breadcrumbs/dist/ng-breadcrumbs.min.js": "js/ng-breadcrumbs.min.js"}
+                    {"bower_components/ng-breadcrumbs/dist/ng-breadcrumbs.min.js": "js/ng-breadcrumbs.min.js"},
+                    {"bower_components/angular-fontawesome/dist/angular-fontawesome.min.js": "js/angular-fontawesome.min.js"}
                 ]
             },
             "bootstrap": {
@@ -35,6 +37,15 @@
                     {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg": "fonts/glyphicons-halflings-regular.svg"},
                     {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf": "fonts/glyphicons-halflings-regular.ttf"},
                     {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff": "fonts/glyphicons-halflings-regular.woff"}
+                ]
+            },
+            "font-awesome": {
+                "mapping": [
+                    {"bower_components/font-awesome/css/font-awesome.min.css": "css/font-awesome.min.css"},
+                    {"bower_components/font-awesome/fonts/fontawesome-webfont.eot": "fonts/fontawesome-webfont.eot"},
+                    {"bower_components/font-awesome/fonts/fontawesome-webfont.svg": "fonts/fontawesome-webfont.svg"},
+                    {"bower_components/font-awesome/fonts/fontawesome-webfont.ttf": "fonts/fontawesome-webfont.ttf"},
+                    {"bower_components/font-awesome/fonts/fontawesome-webfont.woff": "fonts/fontawesome-webfont.woff"}
                 ]
             }
         },
@@ -46,7 +57,8 @@
             "angular-tablesort",
             "ng-breadcrumbs",
             "bootswatch",
-            "bootstrap-sass-official"
+            "bootstrap-sass-official",
+            "angular-fontawesome"
         ]
     }
 }

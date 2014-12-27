@@ -6,23 +6,29 @@ var phoneApp = angular.module('phoneApp', [
     'phoneServices',
     'ui.bootstrap',
     'tableSort',
-    'ng-breadcrumbs'
+    'ng-breadcrumbs',
+    'picardy.fontawesome'
 ]);
 
 phoneApp.config(function ($routeProvider, $httpProvider) {
     $routeProvider
-    .when('/phones', {
-        templateUrl: 'phone-list.html',
-        controller: 'PhoneListCtrl',
+    .when('/landing', {
+        templateUrl: 'landing.html',
+        controller: 'LandingCtrl',
         label: 'Home'
     })
-    .when('/phones/:phoneId', {
+    .when('/landing/phones', {
+        templateUrl: 'phone-list.html',
+        controller: 'PhoneListCtrl',
+        label: 'Phones'
+    })
+    .when('/landing/phones/:phoneId', {
         templateUrl: 'phone-detail.html',
         controller: 'PhoneDetailCtrl',
         label: 'Details'
     })
     .otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/landing'
     });
 
     $httpProvider.interceptors.push(function ($q) {
