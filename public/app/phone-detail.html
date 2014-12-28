@@ -1,50 +1,65 @@
 <div ng-include="'breadcrumb.html'"></div>
 
 <div class="row">
+    <div class="col-md-12">
 
-    <div class="col-md-6">
-        <div class="well bs-component">
-            <form name="phoneForm" class="form-horizontal" novalidate>
-                <fieldset>
-                    <legend>Phone</legend>
-
-                    <div class="form-group" ng-class="{'has-error': phoneForm.name.$dirty && phoneForm.name.$invalid}">
-                        <label for="inputEmail" class="col-md-2 control-label">Name</label>
-                        <div class="col-md-10">
-                            <input type="text" name="name" class="form-control" id="inputEmail" ng-model="phone.name" required>
-                        </div>
+        <tabset justified="true">
+            <tab heading="Edit">
+                <div class="row">
+                    <div class="col-md-12">
+                        &nbsp;
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
 
-                    <div class="form-group">
-                        <label for="textArea" class="col-md-2 control-label">Description</label>
-                        <div class="col-md-10">
-                            <textarea class="form-control" rows="8" id="textArea" ng-model="phone.description" required></textarea>
-                        </div>
-                    </div>
+                        <div class="well bs-component">
+                            <form name="phoneForm" class="form-horizontal" novalidate>
+                                <fieldset>
+                                    <legend>Phone</legend>
 
-                    <div class="form-group">
-                        <div class="col-md-10 col-md-offset-2">
-                            <button type="button" ng-click="save(phone)" class="btn btn-default btn-primary"
-                                    ng-disabled="phoneForm.name.$dirty && phoneForm.name.$invalid">
-                                <i class="fa fa-check"></i> Save
-                            </button>
+                                    <div class="form-group"
+                                         ng-class="{'has-error': phoneForm.name.$dirty && phoneForm.name.$invalid}">
+                                        <label for="inputEmail" class="col-md-2 control-label">Name</label>
+
+                                        <div class="col-md-10">
+                                            <input type="text" name="name" class="form-control" id="inputEmail"
+                                                   ng-model="phone.name" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="textArea" class="col-md-2 control-label">Description</label>
+
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" rows="8" id="textArea"
+                                                      ng-model="phone.description" required></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-10 col-md-offset-2">
+                                            <button type="button" ng-click="save(phone)"
+                                                    class="btn btn-default btn-primary"
+                                                    ng-disabled="phoneForm.name.$dirty && phoneForm.name.$invalid">
+                                                <i class="fa fa-check"></i> Save
+                                            </button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
                         </div>
+
                     </div>
-                </fieldset>
-            </form>
-        </div>
+                </div>
+            </tab>
+            <tab heading="Other 1">
+                Other 1
+            </tab>
+            <tab heading="Other 2">
+                Other 2
+            </tab>
+        </tabset>
+
     </div>
-
-    <div class="col-md-3">
-        <div ng-controller="CarouselCtrl">
-            <div style="width: 400px; height: 400px">
-                <carousel interval="5000">
-                    <slide ng-repeat="slide in slides" active="slide.active">
-                        <img ng-src="{{slide.image}}" style="margin:auto;">
-                    </slide>
-                </carousel>
-            </div>
-        </div>
-    </div>
-
 </div>
