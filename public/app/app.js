@@ -6,8 +6,7 @@ var phoneApp = angular.module('phoneApp', [
     'phoneServices',
     'ui.bootstrap',
     'tableSort',
-    'ng-breadcrumbs',
-    'picardy.fontawesome'
+    'ng-breadcrumbs'
 ]);
 
 phoneApp.config(function ($routeProvider, $httpProvider) {
