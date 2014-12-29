@@ -1,33 +1,43 @@
 'use strict';
 
 var phoneApp = angular.module('phoneApp', [
-    'ngRoute',
-    'phoneControllers',
-    'phoneServices',
+    'ui.router',
     'ui.bootstrap',
     'tableSort',
-    'ng-breadcrumbs'
+    'ncy-angular-breadcrumb',
+    'phoneControllers',
+    'phoneServices'
 ]);
 
-phoneApp.config(function ($routeProvider, $httpProvider) {
-    $routeProvider
-    .when('/landing', {
+phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+    $urlRouterProvider.otherwise('/landing');
+
+    $stateProvider
+    .state('landing', {
+        url: '/landing',
         templateUrl: 'landing.html',
         controller: 'LandingCtrl',
-        label: 'Home'
+        ncyBreadcrumb: {
+            label: 'Home'
+        }
     })
-    .when('/landing/phones', {
+    .state('phones', {
+        url: '/phones',
         templateUrl: 'phone-list.html',
         controller: 'PhoneListCtrl',
-        label: 'Phones'
+        ncyBreadcrumb: {
+            label: 'Phones',
+            parent: 'landing'
+        }
     })
-    .when('/landing/phones/:phoneId', {
+    .state('details', {
+        url: '/phones/:phoneId',
         templateUrl: 'phone-detail.html',
         controller: 'PhoneDetailCtrl',
-        label: 'Details'
-    })
-    .otherwise({
-        redirectTo: '/landing'
+        ncyBreadcrumb: {
+            label: 'Details',
+            parent: 'phones'
+        }
     });
 
     $httpProvider.interceptors.push(function ($q) {

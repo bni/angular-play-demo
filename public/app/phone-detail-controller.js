@@ -1,11 +1,7 @@
 'use strict';
 
-phoneControllers.controller('PhoneDetailCtrl', function ($scope, $routeParams, Phone, breadcrumbs) {
-    //breadcrumbs.options = {'Details': $routeParams.phoneId};
-
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function (phone) {
-        breadcrumbs.options = {'Details': phone.name};
-    });
+phoneControllers.controller('PhoneDetailCtrl', function ($scope, $stateParams, Phone) {
+    $scope.phone = Phone.get({phoneId: $stateParams.phoneId});
 
     $scope.save = function(phone) {
         phone.$save();
