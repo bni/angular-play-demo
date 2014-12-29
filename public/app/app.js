@@ -30,12 +30,12 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
             parent: 'landing'
         }
     })
-    .state('details', {
+    .state('detail', {
         url: '/phones/:phoneId',
         templateUrl: 'phone-detail.html',
         controller: 'PhoneDetailCtrl',
         ncyBreadcrumb: {
-            label: 'Details',
+            label: '{{phone.name}}',
             parent: 'phones'
         }
     });
