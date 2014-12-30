@@ -40,23 +40,16 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
             parent: 'phones'
         }
     })
-    .state("detail.edit", {
-        url: "/edit",
-        templateUrl: "phone-edit-tab.html",
+    .state("detail.main", {
+        url: "/main",
+        templateUrl: "phone-main-tab.html",
         ncyBreadcrumb: {
             skip: true
         }
     })
-    .state("detail.other-1", {
-        url: "/other-1",
-        templateUrl: "phone-other-1-tab.html",
-        ncyBreadcrumb: {
-            skip: true
-        }
-    })
-    .state("detail.other-2", {
-        url: "/other-2",
-        templateUrl: "phone-other-2-tab.html",
+    .state("detail.other", {
+        url: "/other",
+        templateUrl: "phone-other-tab.html",
         ncyBreadcrumb: {
             skip: true
         }
