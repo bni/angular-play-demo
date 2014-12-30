@@ -31,12 +31,34 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         }
     })
     .state('detail', {
+        abtract: true,
         url: '/phones/:phoneId',
         templateUrl: 'phone-detail.html',
         controller: 'PhoneDetailCtrl',
         ncyBreadcrumb: {
             label: '{{phone.name}}',
             parent: 'phones'
+        }
+    })
+    .state("detail.edit", {
+        url: "/edit",
+        templateUrl: "phone-edit-tab.html",
+        ncyBreadcrumb: {
+            skip: true
+        }
+    })
+    .state("detail.other-1", {
+        url: "/other-1",
+        templateUrl: "phone-other-1-tab.html",
+        ncyBreadcrumb: {
+            skip: true
+        }
+    })
+    .state("detail.other-2", {
+        url: "/other-2",
+        templateUrl: "phone-other-2-tab.html",
+        ncyBreadcrumb: {
+            skip: true
         }
     });
 
