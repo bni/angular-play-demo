@@ -1,6 +1,7 @@
 'use strict';
 
 var phoneApp = angular.module('phoneApp', [
+    'ngResource',
     'ui.router',
     'ui.bootstrap',
     'tableSort',
@@ -15,7 +16,7 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider
     .state('landing', {
         url: '/landing',
-        templateUrl: 'landing.html',
+        templateUrl: 'templates/landing.html',
         controller: 'LandingCtrl',
         ncyBreadcrumb: {
             label: 'Home'
@@ -23,7 +24,7 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     })
     .state('phones', {
         url: '/phones',
-        templateUrl: 'phone-list.html',
+        templateUrl: 'templates/phone-list.html',
         controller: 'PhoneListCtrl',
         ncyBreadcrumb: {
             label: 'Phones',
@@ -33,7 +34,7 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     .state('detail', {
         abtract: true,
         url: '/phones/:phoneId',
-        templateUrl: 'phone-detail.html',
+        templateUrl: 'templates/phone-detail.html',
         controller: 'PhoneDetailCtrl',
         ncyBreadcrumb: {
             label: '{{phone.name}}',
@@ -42,14 +43,14 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     })
     .state("detail.main", {
         url: "/main",
-        templateUrl: "phone-main-tab.html",
+        templateUrl: "templates/phone-main-tab.html",
         ncyBreadcrumb: {
             skip: true
         }
     })
     .state("detail.other", {
         url: "/other",
-        templateUrl: "phone-other-tab.html",
+        templateUrl: "templates/phone-other-tab.html",
         ncyBreadcrumb: {
             skip: true
         }
@@ -59,13 +60,17 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         return {
             'responseError': function (rejection) {
                 if (rejection.status === 401) {
-                    window.location.href = 'http://www.google.se';
+                    window.location.href = '/#landing';
                 }
 
                 return $q.reject(rejection);
             }
         };
     });
+});
+
+phoneApp.run(function() {
+    FastClick.attach(document.body);
 });
 
 var phoneControllers = angular.module('phoneControllers', []);
