@@ -1,5 +1,5 @@
 'use strict';
 
-phoneServices.factory('Phone', function ($resource) {
+phoneServices.factory('phoneService', function ($resource) {
     return $resource('phones/:phoneId');
 });

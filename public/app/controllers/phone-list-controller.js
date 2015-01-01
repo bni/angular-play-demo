@@ -1,7 +1,7 @@
 'use strict';
 
-phoneControllers.controller('PhoneListCtrl', function ($scope, Phone, $modal) {
-    $scope.phones = Phone.query();
+phoneControllers.controller('PhoneListCtrl', function ($scope, $modal, phoneService) {
+    $scope.phones = phoneService.query();
 
     $scope.selectedPhone = null;
     $scope.setSelectedPhone = function (selectedPhone) {

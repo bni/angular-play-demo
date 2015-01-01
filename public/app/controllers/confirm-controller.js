@@ -1,6 +1,7 @@
 'use strict';
 
-phoneControllers.controller('ConfirmDialogCtrl', function ($scope, $modalInstance, dialogTitle, dialogMessage, dialogConfirm, dialogCancel) {
+phoneControllers.controller('ConfirmDialogCtrl', function ($scope, $modalInstance,
+        dialogTitle, dialogMessage, dialogConfirm, dialogCancel) {
     $scope.dialogTitle = dialogTitle;
     $scope.dialogMessage = dialogMessage;
     $scope.dialogConfirm = dialogConfirm;

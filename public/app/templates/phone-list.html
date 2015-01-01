@@ -35,7 +35,7 @@
 <div class="row">
 
     <div class="col-md-12">
-        <table class="table table-striped table-hover" ts-wrapper ng-cloak>
+        <table class="table table-striped table-hover" ts-wrapper>
             <thead>
             <tr>
                 <th>&nbsp;</th>
@@ -51,10 +51,10 @@
                            onclick="if (!this.checked) {event.preventDefault(); return false;}">
                 </td>
                 <td>
-                    <a ui-sref="detail.main({phoneId: phone.id})">{{phone.name}}</a>
+                    <a ui-sref="detail.main({phoneId: phone.id})"><span ng-bind="phone.name"></span></a>
                 </td>
                 <td>
-                    {{phone.snippet}}
+                    <span ng-bind="phone.snippet"></span>
                 </td>
             </tr>
             </tbody>
