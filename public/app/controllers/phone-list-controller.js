@@ -1,6 +1,8 @@
 'use strict';
 
-phoneControllers.controller('PhoneListCtrl', function ($scope, $modal, phoneService) {
+phoneControllers.controller('PhoneListCtrl', function ($scope, $state, $modal, phoneService) {
+    $scope.$state = $state;
+
     $scope.phones = phoneService.query(function() {
         $scope.loaded = true;
     });

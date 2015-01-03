@@ -1,7 +1,6 @@
 'use strict';
 
 var phoneApp = angular.module('phoneApp', [
-    'ngResource',
     'ui.router',
     'ui.bootstrap',
     'tableSort',
