@@ -9,7 +9,7 @@ var phoneApp = angular.module('phoneApp', [
     'phoneServices'
 ]);
 
-phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+phoneApp.config(function ($stateProvider, $urlRouterProvider, $breadcrumbProvider, $httpProvider) {
     $urlRouterProvider.otherwise('/landing');
 
     $stateProvider
@@ -55,6 +55,10 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         }
     });
 
+    $breadcrumbProvider.setOptions({
+        templateUrl: 'templates/breadcrumb-template.html'
+    });
+
     $httpProvider.interceptors.push(function ($q) {
         return {
             'responseError': function (rejection) {
@@ -68,10 +72,14 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     });
 });
 
-phoneApp.run(function() {
+phoneApp.run(function($rootScope, phoneService) {
     FastClick.attach(document.body);
+
+    // sessionService?
+    $rootScope.sessionInfo = phoneService.get({phoneId: 'dell-venue'});
 });
 
 var phoneControllers = angular.module('phoneControllers', []);
 
 var phoneServices = angular.module('phoneServices', ['ngResource']);
+
