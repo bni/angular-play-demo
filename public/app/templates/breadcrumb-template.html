@@ -3,7 +3,5 @@
         <a ng-switch-when="false" href="{{step.ncyBreadcrumbLink}}">{{step.ncyBreadcrumbLabel}}</a>
         <span ng-switch-when="true">{{step.ncyBreadcrumbLabel}}</span>
     </li>
-    <span class="pull-right" style="color: #999999;">
-        {{$root.sessionInfo.name}}<a href="/logout" style="padding: 3px;"><i class="fa fa-power-off" style="padding: 3px;"></i></a>
-    </span>
+    <logout-button></logout-button>
 </ol>

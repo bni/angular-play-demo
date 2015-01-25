@@ -6,7 +6,8 @@ var phoneApp = angular.module('phoneApp', [
     'tableSort',
     'ncy-angular-breadcrumb',
     'phoneControllers',
-    'phoneServices'
+    'phoneServices',
+    'phoneDirectives'
 ]);
 
 phoneApp.config(function ($stateProvider, $urlRouterProvider, $breadcrumbProvider, $httpProvider) {
@@ -83,3 +84,4 @@ var phoneControllers = angular.module('phoneControllers', []);
 
 var phoneServices = angular.module('phoneServices', ['ngResource']);
 
+var phoneDirectives = angular.module('phoneDirectives', []);
