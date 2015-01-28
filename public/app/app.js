@@ -76,11 +76,9 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $breadcrumbProvide
 phoneApp.run(function($rootScope, phoneService) {
     FastClick.attach(document.body);
 
-    // sessionService?
     $rootScope.sessionInfo = phoneService.get({phoneId: 'dell-venue'});
 
-    // Detect if user is on mobile device by checking for touch API and that UA contains 'Mobile'.
-    $rootScope.isMobileDevice = 'ontouchstart' in window && navigator.userAgent.match(/Mobile/);
+    $rootScope.isMobileDevice = 'ontouchstart' in window && !!navigator.userAgent.match(/Mobile/);
 });
 
 var phoneControllers = angular.module('phoneControllers', []);
