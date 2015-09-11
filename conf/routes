@@ -1,3 +1,6 @@
+POST    /login                          @controllers.AuthenticationController.login()
+GET     /logout                         @controllers.AuthenticationController.logout()
+
 GET     /phones                         @controllers.PhoneController.list()
 GET     /phones/:phoneId                @controllers.PhoneController.fetchDetail(phoneId)
 GET     /phones/images/:fileName        @controllers.PhoneController.getImage(fileName)

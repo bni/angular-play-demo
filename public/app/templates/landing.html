@@ -3,6 +3,40 @@
 <div class="row">
 
     <div class="col-md-3">
+        <div class="well bs-component">
+            <form name="loginForm" class="form-horizontal" novalidate>
+                <fieldset>
+                    <div class="form-group" ng-class="{'has-error': loginForm.email.$dirty && loginForm.email.$invalid}">
+                        <label for="inputEmail" class="col-md-3 control-label">Email</label>
+
+                        <div class="col-md-9">
+                            <input type="text" name="email" class="form-control" id="inputEmail" ng-model="credentials.email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error': loginForm.password.$dirty && loginForm.password.$invalid}">
+                        <label for="inputPassword" class="col-md-3 control-label">Password</label>
+
+                        <div class="col-md-9">
+                            <input type="text" name="password" class="form-control" id="inputPassword" ng-model="credentials.password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+                            <button type="button" ng-click="login()"
+                                    class="btn btn-default btn-primary"
+                                    ng-disabled="loginForm.email.$dirty && loginForm.password.$invalid">
+                                <i class="glyphicon glyphicon-ok"></i> Login
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-3">
         <a ui-sref="phones" class="btn btn-block btn-lg btn-primary">
             <i class="fa fa-exclamation-triangle fa-4x"></i><br>Phones
         </a>
@@ -13,5 +47,4 @@
             <i class="fa fa-asterisk fa-4x"></i><br>Admin
         </a>
     </div>
-
 </div>
