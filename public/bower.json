@@ -3,18 +3,18 @@
     "description": "Angular Play Demo",
     "version": "0.0.1",
     "dependencies": {
-        "angular": "1.3.8",
-        "angular-resource": "1.3.8",
-        "angular-ui-router": "0.2.13",
-        "angular-bootstrap": "0.12.0",
-        "angular-tablesort": "1.0.5",
-        "angular-breadcrumb": "0.3.2",
-        "bootswatch": "3.3.1+2",
-        "font-awesome": "4.2.0",
-        "fastclick": "1.0.3"
+        "angular": "1.4.4",
+        "angular-resource": "1.4.4",
+        "angular-ui-router": "0.2.15",
+        "angular-bootstrap": "0.13.3",
+        "angular-tablesort": "1.1.0",
+        "angular-breadcrumb": "0.4.1",
+        "bootswatch": "3.3.5",
+        "font-awesome": "4.4.0",
+        "fastclick": "1.0.6"
     },
     "install": {
-        "path": "app/lib",
+        "path": "app/vendors",
         "sources": {
             "angular": {
                 "mapping": [
@@ -55,11 +55,7 @@
             "angular-bootstrap",
             "angular-tablesort",
             "angular-breadcrumb",
-            "bootswatch",
-            "bootstrap-sass-official"
+            "bootswatch"
         ]
-    },
-    "resolutions": {
-        "angular": "1.3.8"
     }
 }

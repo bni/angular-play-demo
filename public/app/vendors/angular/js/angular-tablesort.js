@@ -1,6 +1,6 @@
 /*
- angular-tablesort v1.0.5
- (c) 2013 Mattias Holmlund, http://mattiash.github.io/angular-tablesort
+ angular-tablesort v1.1.0
+ (c) 2013-2015 Mattias Holmlund, http://mattiash.github.io/angular-tablesort
  License: MIT
 */
 
@@ -88,10 +88,10 @@ tableSortModule.directive('tsWrapper', ['$log', '$parse', function( $log, $parse
                         aval = filterFun( aval );
                         bval = filterFun( bval );
                     }
-                    if( aval === undefined ) {
+                    if( aval === undefined || aval === null ) {
                         aval = "";
                     }
-                    if( bval === undefined ) {
+                    if( bval === undefined || bval === null ) {
                        bval = "";
                     }
                     descending = $scope.sortExpression[i][2];
@@ -108,10 +108,10 @@ tableSortModule.directive('tsWrapper', ['$log', '$parse', function( $log, $parse
                 if( $scope.trackBy ) {
                     aval = a[$scope.trackBy];
                     bval = b[$scope.trackBy];
-                    if( aval === undefined ) {
+                    if( aval === undefined || aval === null ) {
                         aval = "";
                     }
-                    if( bval === undefined ) {
+                    if( bval === undefined || bval === null ) {
                         bval = "";
                     }
                     if( aval > bval ) {
@@ -157,28 +157,47 @@ tableSortModule.directive('tsCriteria', function() {
 tableSortModule.directive("tsRepeat", ['$compile', function($compile) {
     return {
         terminal: true,
+        multiElement: true,
         require: "^tsWrapper",
         priority: 1000000,
         link: function(scope, element, attrs, tsWrapperCtrl) {
-            var clone = element.clone();
-            var tdcount = element[0].childElementCount;
-            var repeatExpr = clone.attr("ng-repeat");
+            var repeatAttrs = ["ng-repeat", "data-ng-repeat", "ng-repeat-start", "data-ng-repeat-start"];
+            var ngRepeatDirective = repeatAttrs[0];
+            var tsRepeatDirective = "ts-repeat";
+            for (i = 0; i < repeatAttrs.length; i++) {
+                 if (angular.isDefined(element.attr(repeatAttrs[i]))) {
+                    ngRepeatDirective = repeatAttrs[i];
+                    tsRepeatDirective = ngRepeatDirective.replace(/^ng/, 'ts');
+                    break;
+                }
+            }
+
+            var repeatExpr = element.attr(ngRepeatDirective);
             var trackBy = null;
             var trackByMatch = repeatExpr.match(/\s+track\s+by\s+\S+?\.(\S+)/);
             if( trackByMatch ) {
                 trackBy = trackByMatch[1];
                 tsWrapperCtrl.setTrackBy(trackBy);
             }
-            repeatExpr = repeatExpr.replace(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(\s+track\s+by\s+[\s\S]+?)?\s*$/,
-                "$1 in $2 | tablesortOrderBy:sortFun$3");
 
-            element.html("<td colspan='"+tdcount+"'></td>");
-            element[0].className += " showIfLast";
-            clone.removeAttr("ts-repeat");
+            if (repeatExpr.search(/tablesort/) != -1) {
+                repeatExpr = repeatExpr.replace(/tablesort/,"tablesortOrderBy:sortFun");
+            } else {
+                repeatExpr = repeatExpr.replace(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(\s+track\s+by\s+[\s\S]+?)?\s*$/,
+                    "$1 in $2 | tablesortOrderBy:sortFun$3");
+            }
 
-            clone.attr("ng-repeat", repeatExpr);
-            var clonedElement = $compile(clone)(scope);
-            element.after(clonedElement);
+            var noDataRow = angular.element(element[0]).clone();
+            noDataRow.removeAttr(ngRepeatDirective);
+            noDataRow.removeAttr(tsRepeatDirective);
+            noDataRow.addClass("showIfLast");
+            noDataRow.children().remove();
+            noDataRow.append('<td colspan="' + element[0].childElementCount + '"></td>');
+            noDataRow = $compile(noDataRow)(scope);
+            element.parent().prepend(noDataRow);
+
+            angular.element(element[0]).attr(ngRepeatDirective, repeatExpr);
+            $compile(element, null, 1000000)(scope);
         }
     };
 }]);
@@ -194,12 +213,12 @@ tableSortModule.filter( 'tablesortOrderBy', function(){
 
 tableSortModule.filter( 'parseInt', function(){
     return function(input) {
-        return parseInt( input );
+        return parseInt( input ) || null;
     };
 } );
 
 tableSortModule.filter( 'parseFloat', function(){
     return function(input) {
-        return parseFloat( input );
+        return parseFloat( input ) || null;
     };
 } );
