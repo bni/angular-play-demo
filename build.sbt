@@ -11,3 +11,5 @@ libraryDependencies ++= Seq(
   javaWs,
   cache
 )
+
+routesGenerator := InjectedRoutesGenerator

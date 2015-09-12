@@ -2,7 +2,6 @@ package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
-import play.Logger;
 import play.cache.CacheApi;
 import play.mvc.BodyParser;
 import play.mvc.Controller;

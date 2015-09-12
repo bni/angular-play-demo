@@ -11,15 +11,31 @@ var phoneApp = angular.module('phoneApp', [
 ]);
 
 phoneApp.config(function ($stateProvider, $urlRouterProvider, $breadcrumbProvider, $httpProvider) {
-    $urlRouterProvider.otherwise('/landing');
+    $urlRouterProvider.otherwise('/login');
 
     $stateProvider
+    .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login-page.html',
+        controller: 'LoginPageCtrl',
+        ncyBreadcrumb: {
+            skip: true
+        }
+    })
+    .state('logout', {
+        url: '/logout',
+        templateUrl: 'templates/logout-page.html',
+        controller: 'LogoutPageCtrl',
+        ncyBreadcrumb: {
+            skip: true
+        }
+    })
     .state('landing', {
         url: '/landing',
         templateUrl: 'templates/landing.html',
         controller: 'LandingCtrl',
         ncyBreadcrumb: {
-            label: 'Home'
+            skip: true
         }
     })
     .state('phones', {
@@ -64,7 +80,7 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $breadcrumbProvide
         return {
             'responseError': function (rejection) {
                 if (rejection.status === 401) {
-                    window.location.href = '/#landing';
+                    window.location.href = '/#login';
                 }
 
                 return $q.reject(rejection);
@@ -73,10 +89,8 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $breadcrumbProvide
     });
 });
 
-phoneApp.run(function($rootScope, phoneService) {
+phoneApp.run(function($rootScope) {
     FastClick.attach(document.body);
-
-    $rootScope.sessionInfo = phoneService.get({phoneId: 'dell-venue'});
 
     $rootScope.isMobileDevice = 'ontouchstart' in window && !!navigator.userAgent.match(/Mobile/);
 });
