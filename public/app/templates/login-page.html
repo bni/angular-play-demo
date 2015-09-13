@@ -1,8 +1,8 @@
-<div class="container">
-    <div class="col-md-6 col-md-offset-3">
-        <h2 class="form-signin-heading">Brand</h2>
+<div class="container-fluid">
+    <div class="col-md-4 col-md-offset-4">
+        <h2 class="form-signin-heading">&nbsp;</h2>
 
-        <form name="loginForm" ng-submit="login()">
+        <form name="loginForm" ng-submit="login()" method="post">
             <div class="login-form">
                 <div class="form-group" ng-show="loginError">
                     <div class="alert alert-danger" role="alert">
@@ -11,13 +11,13 @@
                 </div>
 
                 <div class="form-group">
-                    <input name="email" type="text" class="form-control login-field" value="" placeholder="Email" id="inputEmail" ng-model="credentials.email" focus="true"/>
-                    <label class="login-field-icon fui-user" for="inputEmail"></label>
+                    <input id="email" name="email" type="text" class="form-control login-field" placeholder="Email" ng-model="credentials.email" focus="true"/>
+                    <label class="login-field-icon fui-user" for="email"></label>
                 </div>
 
                 <div class="form-group">
-                    <input  name="password" type="password" class="form-control login-field" value="" placeholder="Password" id="inputPassword" ng-model="credentials.password"/>
-                    <label class="login-field-icon fui-lock" for="inputPassword"></label>
+                    <input id="password" name="password" type="password" class="form-control login-field" placeholder="Password" ng-model="credentials.password"/>
+                    <label class="login-field-icon fui-lock" for="password"></label>
                 </div>
 
                 <input class="btn btn-primary btn-lg btn-block" type="submit" value="Log in"/>
@@ -25,5 +25,4 @@
         </form>
 
     </div>
-
 </div>
