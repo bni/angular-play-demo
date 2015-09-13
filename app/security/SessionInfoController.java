@@ -13,7 +13,7 @@ public class SessionInfoController extends Controller {
     public Result fetch() {
         response().setContentType("application/json");
 
-        Map<String,String> sessionInfoMap = new HashMap<>();
+        Map<String, String> sessionInfoMap = new HashMap<>();
         sessionInfoMap.put("email", session("email"));
         sessionInfoMap.put("fullName", session("fullName"));
         sessionInfoMap.put("roles", session("roles"));

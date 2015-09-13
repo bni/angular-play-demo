@@ -24,7 +24,7 @@ public class AuthenticationController extends Controller {
             session("token", token);
             session("email", email);
             session("fullName", "Bob Secret");
-            session("roles", "ROLE1;ROLE2;ROLE3");
+            session("roles", "LISTER,EDITOR");
 
             return ok();
         }

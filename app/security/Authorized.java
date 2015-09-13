@@ -7,8 +7,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@With(AuthenticatedAction.class)
+@With(AuthorizedAction.class)
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
-public @interface Authenticated {
+public @interface Authorized {
+    String[] roles();
 }
