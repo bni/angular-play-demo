@@ -9,7 +9,7 @@
         "angular-bootstrap": "0.13.3",
         "angular-tablesort": "1.1.0",
         "angular-breadcrumb": "0.4.1",
-        "bootswatch": "3.3.5",
+        "flat-ui": "2.2.2",
         "font-awesome": "4.4.0",
         "fastclick": "1.0.6"
     },
@@ -29,13 +29,18 @@
                     {"bower_components/angular-breadcrumb/release/angular-breadcrumb.min.js": "js/angular-breadcrumb.min.js"}
                 ]
             },
-            "bootstrap": {
+            "flat-ui": {
                 "mapping": [
-                    {"bower_components/bootswatch/cerulean/bootstrap.min.css": "../bootstrap/css/bootstrap.min.css"},
-                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.eot": "fonts/glyphicons-halflings-regular.eot"},
-                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.svg": "fonts/glyphicons-halflings-regular.svg"},
-                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf": "fonts/glyphicons-halflings-regular.ttf"},
-                    {"bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff": "fonts/glyphicons-halflings-regular.woff"}
+                    {"bower_components/flat-ui/dist/css/vendor/bootstrap.min.css": "css/bootstrap.min.css"},
+                    {"bower_components/flat-ui/dist/css/flat-ui.min.css": "css/flat-ui.min.css"},
+                    {"bower_components/flat-ui/dist/fonts/glyphicons/flat-ui-icons-regular.eot": "fonts/glyphicons/flat-ui-icons-regular.eot"},
+                    {"bower_components/flat-ui/dist/fonts/glyphicons/flat-ui-icons-regular.svg": "fonts/glyphicons/flat-ui-icons-regular.svg"},
+                    {"bower_components/flat-ui/dist/fonts/glyphicons/flat-ui-icons-regular.ttf": "fonts/glyphicons/flat-ui-icons-regular.ttf"},
+                    {"bower_components/flat-ui/dist/fonts/glyphicons/flat-ui-icons-regular.woff": "fonts/glyphicons/flat-ui-icons-regular.woff"},
+                    {"bower_components/flat-ui/dist/fonts/lato/lato-regular.eot": "fonts/lato/lato-regular.eot"},
+                    {"bower_components/flat-ui/dist/fonts/lato/lato-regular.svg": "fonts/lato/lato-regular.svg"},
+                    {"bower_components/flat-ui/dist/fonts/lato/lato-regular.ttf": "fonts/lato/lato-regular.ttf"},
+                    {"bower_components/flat-ui/dist/fonts/lato/lato-regular.woff": "fonts/lato/lato-regular.woff"}
                 ]
             },
             "font-awesome": {
@@ -55,7 +60,8 @@
             "angular-bootstrap",
             "angular-tablesort",
             "angular-breadcrumb",
-            "bootswatch"
+            "bootstrap",
+            "videojs"
         ]
     }
 }

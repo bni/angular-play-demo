@@ -1,36 +1,22 @@
 <div class="container">
     <div class="col-md-6 col-md-offset-3">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Brand</h2>
 
-        <div class="well bs-component">
-            <form name="loginForm" class="form-horizontal" ng-submit="login()">
-                <fieldset>
-                    <div class="form-group">
-                        <label for="inputEmail" class="col-md-3 control-label">Email</label>
+        <form name="loginForm" ng-submit="login()">
+            <div class="login-form">
+                <div class="form-group">
+                    <input name="email" type="text" class="form-control login-field" value="" placeholder="Email" id="inputEmail" ng-model="credentials.email"/>
+                    <label class="login-field-icon fui-user" for="inputEmail"></label>
+                </div>
 
-                        <div class="col-md-9">
-                            <input type="text" name="email" class="form-control" id="inputEmail" ng-model="credentials.email" required>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <input  name="password" type="password" class="form-control login-field" value="" placeholder="Password" id="inputPassword" ng-model="credentials.password"/>
+                    <label class="login-field-icon fui-lock" for="inputPassword"></label>
+                </div>
+                <input class="btn btn-primary btn-lg btn-block" type="submit" value="Log in"/>
+            </div>
+        </form>
 
-                    <div class="form-group">
-                        <label for="inputPassword" class="col-md-3 control-label">Password</label>
-
-                        <div class="col-md-9">
-                            <input type="text" name="password" class="form-control" id="inputPassword" ng-model="credentials.password" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-9 col-md-offset-3">
-                            <button type="submit" class="btn btn-default btn-primary">
-                                <i class="glyphicon glyphicon-ok"></i> Login
-                            </button>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
     </div>
 
 </div>
