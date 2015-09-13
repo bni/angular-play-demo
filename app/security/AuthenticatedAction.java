@@ -11,6 +11,7 @@ public class AuthenticatedAction extends Action.Simple {
     public F.Promise<Result> call(Http.Context ctx) throws Throwable {
         String token = ctx.request().getHeader("X-XSRF-TOKEN");
 
+        // Allow passage if token from header matches token in session
         if (token != null && token.equals(ctx.session().get("token"))) {
             return delegate.call(ctx);
         } else {
