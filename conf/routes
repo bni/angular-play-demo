@@ -1,5 +1,5 @@
-POST    /login                          controllers.AuthenticationController.login()
-POST    /logout                         controllers.AuthenticationController.logout()
+POST    /login                          security.AuthenticationController.login()
+POST    /logout                         security.AuthenticationController.logout()
 
 GET     /phones                         controllers.PhoneController.list()
 GET     /phones/:phoneId                controllers.PhoneController.fetchDetail(phoneId)

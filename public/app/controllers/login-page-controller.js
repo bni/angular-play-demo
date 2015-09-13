@@ -5,9 +5,7 @@ phoneControllers.controller('LoginPageCtrl', function ($scope, $state, $http) {
         $http.post('/login', $scope.credentials).then(function() {
             $state.go('start-page');
         }, function() {
-            console.log("Error!");
-
-            $scope.message = 'Login failed';
+            $scope.loginError = true;
         });
     };
 });

@@ -1,6 +1,6 @@
 package controllers;
 
-import actions.Authenticated;
+import security.Authenticated;
 import com.fasterxml.jackson.databind.JsonNode;
 import play.Logger;
 import play.mvc.BodyParser;

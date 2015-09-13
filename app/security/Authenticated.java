@@ -1,4 +1,4 @@
-package actions;
+package security;
 
 import play.mvc.With;
 

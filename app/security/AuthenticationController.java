@@ -1,19 +1,13 @@
-package controllers;
+package security;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.google.inject.Inject;
-import play.cache.CacheApi;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
-import play.mvc.Http;
 import play.mvc.Result;
 
 import java.util.UUID;
 
 public class AuthenticationController extends Controller {
-    @Inject
-    private CacheApi cache;
-
     @BodyParser.Of(BodyParser.Json.class)
     public Result login() {
         JsonNode json = request().body().asJson();
@@ -23,11 +17,14 @@ public class AuthenticationController extends Controller {
 
         // TODO Check this towards a database or LDAP
         if (email != null && "bob".equals(email) && password != null && "secret".equals(password)) {
-            String uuid = UUID.randomUUID().toString();
+            String token = UUID.randomUUID().toString();
 
-            cache.set(uuid, email, 60 * 15); // Expire in 15 mins
+            response().setCookie("XSRF-TOKEN", token);
 
-            response().setCookie("XSRF-TOKEN", uuid);
+            session("token", token);
+            session("email", email);
+            session("fullName", "Bob Secret");
+            session("roles", "ROLE1;ROLE2;ROLE3");
 
             return ok();
         }
@@ -36,13 +33,9 @@ public class AuthenticationController extends Controller {
     }
 
     public Result logout() {
-        Http.Cookie cookie = request().cookie("XSRF-TOKEN");
-
-        if (cookie != null) {
-            cache.remove(cookie.value());
-        }
-
         response().discardCookie("XSRF-TOKEN");
+
+        session().clear();
 
         return ok();
     }
