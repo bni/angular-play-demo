@@ -2,6 +2,7 @@
     "name": "angular-play-demo",
     "description": "Angular Play Demo",
     "repository": "https://github.com/bni/angular-play-demo",
+    "license": "MIT",
     "version": "0.0.1",
     "devDependencies": {
         "bower": "latest",
