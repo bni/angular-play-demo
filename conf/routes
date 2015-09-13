@@ -1,6 +1,8 @@
 POST    /login                          security.AuthenticationController.login()
 POST    /logout                         security.AuthenticationController.logout()
 
+GET     /session-info                   security.SessionInfoController.fetch()
+
 GET     /phones                         controllers.PhoneController.list()
 GET     /phones/:phoneId                controllers.PhoneController.fetchDetail(phoneId)
 GET     /phones/images/:fileName        controllers.PhoneController.getImage(fileName)
