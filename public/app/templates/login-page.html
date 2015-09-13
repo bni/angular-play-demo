@@ -4,6 +4,12 @@
 
         <form name="loginForm" ng-submit="login()">
             <div class="login-form">
+                <div class="form-group" ng-show="message">
+                    <div class="alert alert-danger" role="alert">
+                        <span class="fui-alert-circle"></span>&nbsp;Incorrect Email or Password
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <input name="email" type="text" class="form-control login-field" value="" placeholder="Email" id="inputEmail" ng-model="credentials.email"/>
                     <label class="login-field-icon fui-user" for="inputEmail"></label>
@@ -13,6 +19,7 @@
                     <input  name="password" type="password" class="form-control login-field" value="" placeholder="Password" id="inputPassword" ng-model="credentials.password"/>
                     <label class="login-field-icon fui-lock" for="inputPassword"></label>
                 </div>
+
                 <input class="btn btn-primary btn-lg btn-block" type="submit" value="Log in"/>
             </div>
         </form>

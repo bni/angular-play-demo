@@ -32,7 +32,7 @@ public class AuthenticationController extends Controller {
             return ok();
         }
 
-        return unauthorized();
+        return badRequest();
     }
 
     public Result logout() {

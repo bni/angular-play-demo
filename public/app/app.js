@@ -30,10 +30,10 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $breadcrumbProvide
             skip: true
         }
     })
-    .state('landing', {
-        url: '/landing',
-        templateUrl: 'templates/landing.html',
-        controller: 'LandingCtrl',
+    .state('start-page', {
+        url: '/start-page',
+        templateUrl: 'templates/start-page.html',
+        controller: 'StartPageCtrl',
         ncyBreadcrumb: {
             skip: true
         }

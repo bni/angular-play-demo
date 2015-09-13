@@ -2,9 +2,12 @@
 
 phoneControllers.controller('LoginPageCtrl', function ($scope, $state, $http) {
     $scope.login = function() {
-        console.log("Loggoin");
         $http.post('/login', $scope.credentials).then(function() {
-            $state.go('landing');
+            $state.go('start-page');
+        }, function() {
+            console.log("Error!");
+
+            $scope.message = 'Login failed';
         });
     };
 });
