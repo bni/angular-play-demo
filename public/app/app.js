@@ -44,7 +44,7 @@ phoneApp.config(function ($stateProvider, $urlRouterProvider, $breadcrumbProvide
         controller: 'PhoneListCtrl',
         ncyBreadcrumb: {
             label: 'Phones',
-            parent: 'landing'
+            parent: 'start-page'
         }
     })
     .state('detail', {
