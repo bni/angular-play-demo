@@ -1,4 +1,4 @@
-package security;
+package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import play.mvc.BodyParser;

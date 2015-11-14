@@ -1,9 +1,10 @@
-package security;
+package controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import play.mvc.Controller;
 import play.mvc.Result;
+import security.Authenticated;
 
 import java.util.HashMap;
 import java.util.Map;
