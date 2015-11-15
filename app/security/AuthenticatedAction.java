@@ -4,9 +4,8 @@ import play.libs.F;
 import play.mvc.Action;
 import play.mvc.Http;
 import play.mvc.Result;
-import play.mvc.Results;
 
-public class AuthenticatedAction extends Action.Simple {
+class AuthenticatedAction extends Action.Simple {
     @Override
     public F.Promise<Result> call(Http.Context ctx) throws Throwable {
         String headerToken = ctx.request().getHeader("X-XSRF-TOKEN");
@@ -16,7 +15,7 @@ public class AuthenticatedAction extends Action.Simple {
         if (headerToken != null && headerToken.equals(sessionToken)) {
             return delegate.call(ctx);
         } else {
-            return F.Promise.pure(Results.unauthorized());
+            return F.Promise.pure(unauthorized());
         }
     }
 }
