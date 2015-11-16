@@ -1,6 +1,6 @@
 package security;
 
-import play.libs.F;
+import play.libs.F.Promise;
 import play.mvc.Action;
 import play.mvc.Http;
 import play.mvc.Result;
@@ -12,7 +12,7 @@ import java.util.Collections;
 
 class AuthorizedAction extends Action.Simple {
     @Override
-    public F.Promise<Result> call(Http.Context ctx) throws Throwable {
+    public Promise<Result> call(Http.Context ctx) throws Throwable {
         String[] callerRoles = ctx.session().get("roles") == null ? null : ctx.session().get("roles").split(",");
 
         InvocationHandler invocationHandler = Proxy.getInvocationHandler(this.configuration);
@@ -22,7 +22,7 @@ class AuthorizedAction extends Action.Simple {
         if (callerRoles != null && annotationRoles != null && !Collections.disjoint(Arrays.asList(callerRoles), Arrays.asList(annotationRoles))) {
             return delegate.call(ctx);
         } else {
-            return F.Promise.pure(unauthorized());
+            return Promise.pure(unauthorized());
         }
     }
 }

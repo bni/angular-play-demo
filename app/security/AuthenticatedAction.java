@@ -1,13 +1,13 @@
 package security;
 
-import play.libs.F;
+import play.libs.F.Promise;
 import play.mvc.Action;
 import play.mvc.Http;
 import play.mvc.Result;
 
 class AuthenticatedAction extends Action.Simple {
     @Override
-    public F.Promise<Result> call(Http.Context ctx) throws Throwable {
+    public Promise<Result> call(Http.Context ctx) throws Throwable {
         String headerToken = ctx.request().getHeader("X-XSRF-TOKEN");
         String sessionToken = ctx.session().get("token");
 
@@ -15,7 +15,7 @@ class AuthenticatedAction extends Action.Simple {
         if (headerToken != null && headerToken.equals(sessionToken)) {
             return delegate.call(ctx);
         } else {
-            return F.Promise.pure(unauthorized());
+            return Promise.pure(unauthorized());
         }
     }
 }
